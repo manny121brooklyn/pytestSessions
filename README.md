@@ -52,3 +52,23 @@ pytest pytest_scripts/test_demo.py -m login
 # or
 py.test pytest_scripts/test_demo.py -m login
 
+## To run several test cases in one file in parallel use pytest xdist plugin
+# How to install xdist plugin: 
+pip install pytest-xdist
+# Syntax
+# run 5 test methods in test_webpage_login.py from pytest_scripts folder
+pytest -n 5  pytest_scripts/test_webpage_login.py
+
+## Pytest html report installation 
+pip install pytest-html 
+
+## Then run the command: 
+pytest --html=report.html
+
+## Run the command to save report in a seperate folder 
+pytest -vs pytest_scripts/test_google.py --html=reports/google_test_report.html
+
+# Explanation
+Run file test_google.py from pytest_scripts folder and generate html report 
+google_test_report.html and save under reports folder
+
